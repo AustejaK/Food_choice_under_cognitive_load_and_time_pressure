@@ -7,8 +7,8 @@
  
      dict(
         name='comfocus_youan',
-        display_name="Comfocus Youan Experiment",
-        num_demo_participants=11,
+        display_name="Comfocus Experiment",
+        num_demo_participants=10,
         app_sequence=['comfocus_youan'],
         TREATMENT="C2",
     )
@@ -16,3 +16,17 @@
 and 
 
     PARTICIPANT_FIELDS = ['treatment', 'pair', 'product', 'picture', 'calories', 'fat', 'saturated', 'carbohydrates', 'sugars', 'fibre', 'protein', 'salt', 'page_order', 'String', 'person', 'name', 'picture_n', 'picture_wg', 'picture_wl', 'weight']
+
+
+This study has 6 treatments that can be defined in settings.py:
+
+        # Treatments:
+        # C1 = control (with nutritional information)
+        # T1 = treatment "high cognitive load" (with nutritional information)
+        # T2 = treatment "high time pressure" (with nutritional information
+        # C2 = control (with episodic future thinking)
+        # T3 = treatment "high cognitive load" (with episodic future thinking)
+        # T4 = treatment "high time pressure" (with episodic future thinking)
+        
+For episodic future thinking treatments, participants are defined in eft_list.csv and modified pictures are uploaded to _static/comfocus.
+        
