@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Ricordi che le tue decisioni sono reali.
+            <br><br>
+            Alla fine dell'esperimento, <b>una scelta su {{C.NUM_ROUNDS}}</b> sarà selezionata a caso per essere vincolante.
+            <br><br>
+            {{ if player.treatment == "T1" or player.treatment == "T3" }}
+            Se hai fatto <b>correttamente</b> il compito di memorizzazione nella scelta vincolante, il tuo compenso
+            sarà di <b>{{C.participation}} + {{C.bonus}}</b>.
+            <br><br>
+            Se <b>non</b> si è memorizzato <b>correttamente</b>, il compenso sarà di {{C.participation}}.
+            <br><br>
+            {{ endif }}
+
+            {{ if player.treatment == "T2" or player.treatment == "T4"}}
+            Se hai fatto <b>la tua scelta</b> in {{C.time_pressure}} secondi nella situazione vincolante, il tuo compenso
+            sarà di <b>{{C.participation}} + {{C.bonus}}</b>.
+            <br><br>
+            Se <b>non</b> hai fatto <b>la tua scelta</b> in {{C.time_pressure}} secondi, il compenso sarà di
+            <b>{{C.participation}}</b>.
+            <br><br>
+            {{ endif }}
+
+            Riceverai un prodotto alimentare o una bevanda vincolante e ti verrà chiesto di <b>assaggiarlo</b>.
+            <br><br>
+            Se <b>non accetti</b> di assagarlo immediatamente, <b>non potremo pagarti</b> la quota di partecipazione.
+            </p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

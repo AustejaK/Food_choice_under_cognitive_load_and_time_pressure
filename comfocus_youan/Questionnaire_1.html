@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            {{formfields}}
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

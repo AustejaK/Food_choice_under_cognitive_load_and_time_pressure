@@ -1,0 +1,101 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"> Foglio informativo </h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+        <p align="justify">
+        <b>Di cosa tratta questo progetto?</b><br><br>
+            Ti ringraziamo per aver accettato di partecipare a questo studio sulle tue preferenze riguardo a diversi
+            prodotti alimentari. Questi prodotti sono reali e alla fine dello studio ti verrà chiesto di assaggiarne
+            uno. È molto importante che sia consapevole del fatto che alcuni di questi prodotti possono contenere uno
+            o più dei seguenti allergeni:
+            <ul>
+                <li>Grano/Frumento</li>
+                <li>Avena</li>
+                <li>Orzo</li>
+                <li>Cereali contenenti glutine</li>
+                <li>Crusca</li>
+                <li>Sesamo</li>
+                <li>Frutta a guscio</li>
+                <li>Latte</li>
+                <li>Soia</li>
+            </ul>
+            *L'elenco completo degli ingredienti (non solo degli allergeni) è disponibile su richiesta presso lo sperimentatore.
+            </p>
+            <p  align="justify">
+            Dare il consenso a partecipare a questo studio significa accettare di fare un compito computerizzato e di
+            assagiare un prodotto alimentare in laboratorio. Inoltre, dare il consenso a partecipare significa anche
+            accettare la piena responsabilità per qualsiasi esito negativo del consumo del prodotto. Se sei allergico/a
+            o intollerante a uno qualsiasi degli ingredienti, non puoi partecipare allo studio. Si prega di notare che
+            lo sperimentatore non è responsabile per qualsiasi evento che possa verificarsi a causa del consumo del
+            prodotto. sperimentatore non è responsabile per qualsiasi evento che possa verificarsi a causa del consumo
+            del prodotto.
+            </p>
+
+        <p align="justify">
+        <b>Quanto tempo dura lo studio?</b><br><br>
+            Lo studio dura circa {{C.time}} minuti.
+        </p>
+
+        <p align="justify">
+        <b>Cosa mi verrà chiesto di fare?</b><br><br>
+            Ti verrà chiesto di rispondere a domande sui prodotti alimentari. Contemporaneamente verrà misurata
+            l'attività elettrodermica. L'attività elettrodermica (EDA) si riferisce alla variazione delle proprietà
+            elettriche della pelle. Ti assicuriamo che né le domande sugli alimenti né la misurazione dell'attività
+            elettrodermica comportano rischi o disagi potenziali.
+            <br><br>
+            Sei libero/a di ritirarti dalla ricerca in qualsiasi momento. In questo caso, alzi la mano e lo
+            sperimentatore la aiuterà.
+            <br><br>
+            Il compenso monetario per questo studio è di {{C.participation}}. Questo è il nostro modo di
+            ringraziarti per la tua partecipazione. Ti ricordiamo che in caso di ritiro non riceverai la quota
+            di partecipazione di {{C.participation}}.
+        </p>
+
+        <p align="justify">
+        <b>Le mie risposte saranno anonime e confidenziali?</b><br><br>
+            Sì. Tutte le risposte saranno anonime e le informazioni fornite saranno trattate in modo confidenziale.
+            Tutte le informazioni personali eventualmente richieste prima o durante lo studio non saranno registrate o
+            conservate oltre la fine dello studio. Le informazioni fornite saranno identificate solo da un codice e
+            conservate in modo sicuro in un database chiuso. Solo il personale di ricerca avrà accesso a queste
+            informazioni. La riservatezza sarà garantita nella misura massima consentita dalla legge.
+        </p>
+
+        <p align="justify">
+        <b>Come posso indicare il mio consenso di partecipare?</b><br><br>
+            Ti verrà chiesto di firmare il consenso elettronicamente facendo clic su una casella in basso in questa
+            pagina. In caso di mancato consenso, non sarà possibile continuare lo studio.
+        </p>
+
+        <p align="justify">
+        <b>A chi posso parlare in caso di domande o commenti?</b><br><br>
+            Se hai domande o commenti sullo studio, ti invitiamo a contattare i ricercatori principali di questo progetto:
+            <ul>
+            <li>
+            Youan Qian (youan.qian@ag.tamu.edu), Texas A&M University, 600 John Kimbrough Blvd, TAMU 2124, College Station, TX 77843
+            </li>
+            <li>
+            Dr. Austeja Kazemekaityte (a.kazemekaityte@unitn.it), Department of Economics and Management, University of Trento, Via Vigilio Inama, 5, 38122 Trento TN, Italy.
+            </li>
+            </ul>
+        </p>
+
+        <p align="justify"><i>Questo studio è finanziato dal progetto Horizon 2020 dell'UE.</i></p>
+
+        {{formfields}}
+        </div>
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

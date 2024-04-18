@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Ti chiederemo di fare un compito di scelta alimentare. La procedura è la seguente:
+                <ol>
+                <li>Questa fase consiste in <b>{{C.NUM_ROUNDS}} situazioni di scelta</b>. </li>
+                <li>In ogni situazione ti verranno presentati <b>due prodotti</b> alimentari o bevande.</li>
+                <li>Devi <b>scegliere</b> quali prodotti preferisci mangiare o bere.
+                    {{if player.treatment == "T2" or player.treatment == "T4" }} Dovresti fare ogni scelta in <b>{{C.time_pressure}} secondi</b>.{{endif}}</li>
+                </ol>
+            </p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

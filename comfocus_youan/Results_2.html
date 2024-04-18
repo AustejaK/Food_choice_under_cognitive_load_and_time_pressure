@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 4: Fine</h5>
+        </div>
+        <div class="card-body" >
+            <p class="card-text">
+            <p align="center">
+            Hai vinto un prodotto dalla <b>situazione di scelta {{draw}}</b>.
+            <br><br>
+            <img align="center" class="img-fluid" src= "{{static picture }}" style="width:20%;"/>
+            <br><br>
+            Dovresti assagiare il prodotto scelto prima di lasciare il laboratorio.
+            Il resto può essere portato con te.
+            <br><br>
+            {{ if player.treatment == "C1" or player.treatment == "C2"}}
+            La tua quota di partecipazione è: {{C.participation}}.
+            {{ endif }}
+            {{if player.treatment == "T1" or player.treatment == "T3"}}
+            Hai fatto il compito di memorizzazione in modo {{ if player.payoff == C.participation}}
+            errato {{else}} correto {{endif}} nel turno vincolante.
+            <br><br>
+            <b>La tua quota di partecipazione è {{player.payoff}}</b>.
+            {{endif}}
+            {{if player.treatment == "T2" or player.treatment == "T4"}}
+            {{ if player.payoff == C.participation}} Non hai {{else}} Hai {{ endif }}
+            fatto la tua scelta in {{C.time_pressure}} secondi nella
+            situazione vincolante, quindi <b>il tuo compenso è di {{player.payoff}}</b>.
+            {{endif}}
+            </p>
+            <br>
+            <h2 align="center">Alzi la mano per informare lo sperimentatore che hai finito.</h2>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

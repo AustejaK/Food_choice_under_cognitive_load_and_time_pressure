@@ -1,0 +1,177 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+    .container{
+        margin-top: -2%;
+    }
+    td {
+        padding-left: 40px;
+        text-align="center"
+    }
+    input[type='radio'] {
+        transform: scale(1.5);
+    }
+    table {
+        text-align: center;
+    }
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title"><b>Scelta {{player.round_number}}</b></h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p>
+            <table  align="center" style="text-align: center">
+                <tr>
+                    <td><img align="center" class="img-fluid" src= "{{static image_path_product_1 }}" style="width:50%;"/></td>
+                    <td><img align="center" class="img-fluid" src= "{{static image_path_product_2 }}" style="width:50%; "/></td>
+                </tr>
+                <tr>
+                    <td><h4>{{product_1}}</h4></td>
+                    <td><h4>{{product_2}}</h4></td>
+                </tr>
+                {{ if player.treatment == "C2" or player.treatment == "T3" or player.treatment == "T4" }}
+                <tr>
+                    {{ for choice in form.choice_5}}
+                        <td>{{choice}}</td>
+                    {{endfor}}
+                </tr>
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                </tr>
+                {{ endif }}
+                {{ if player.treatment == "C1" or player.treatment == "T1" or player.treatment == "T2" }}
+
+                <tr>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <td>Valore energetico (per 100 g o ml)</td>
+                                <td>{{calories_1}} kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Grassi</td>
+                                <td>{{fat_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>di cui acidi grassi saturati</td>
+                                <td>{{saturated_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Carboidrati</td>
+                                <td>{{carbohydrates_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>di cui zuccheri</td>
+                                <td>{{sugars_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Fibre</td>
+                                <td>{{fibre_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Proteine</td>
+                                <td>{{protein_1}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Sale</td>
+                                <td>{{salt_1}} g</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <td>Valore energetico (per 100 g o ml)</td>
+                                <td>{{calories_2}} kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Grassi</td>
+                                <td>{{fat_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>di cui acidi grassi saturati</td>
+                                <td>{{saturated_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Carboidrati</td>
+                                <td>{{carbohydrates_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>di cui zuccheri</td>
+                                <td>{{sugars_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Fibre</td>
+                                <td>{{fibre_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Proteine</td>
+                                <td>{{protein_2}} g</td>
+                            </tr>
+                            <tr>
+                                <td>Sale</td>
+                                <td>{{salt_2}} g</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {{ endif }}
+                {{ if player.treatment == "C2" or player.treatment == "T3" or player.treatment == "T4" }}
+                <tr>
+                    <table class="table" align="center">
+                        <tr>
+                        <td width="33%"><img align="center" class="img-fluid" src= "{{static pic_1 }}" style="width:50%;"/></td>
+                        <td width="33%"><img align="center" class="img-fluid" src= "{{static pic_n }}" style="width:50%; "/></td>
+                        <td width="33%"><img align="center" class="img-fluid" src= "{{static pic_2 }}" style="width:50%; "/></td>
+                        </tr>
+                        <tr>
+                        {{ if order_shuffle == 0 }}
+                        <td width="33%">Ecco come appariresti se il tuo peso diminuisse del {{C.kilos}}%.</td>
+                        <td width="33%">Questo è il tuo look attuale.</td>
+                        <td width="33%">Ecco come appariresti se il tuo peso aumentasse del {{C.kilos}}%.</td>
+                        {{ else }}
+                        <td width="33%">Ecco come appariresti se il tuo peso aumentasse del {{C.kilos}}%.</td>
+                        <td width="33%">Questo è il tuo look attuale.</td>
+                        <td width="33%">Ecco come appariresti se il tuo peso diminuisse del {{C.kilos}}%.</td>
+                        {{ endif }}
+                        </tr>
+                    </table>
+                </tr>
+                {{ endif }}
+                {{ if player.treatment == "C1" or player.treatment == "T1" or player.treatment == "T2" }}
+                <tr>
+                    {{ for choice in form.choice_5}}
+                        <td>{{choice}}</td>
+                    {{endfor}}
+                </tr>
+                {{ endif }}
+
+
+            </table>
+            </p>
+        </div>
+
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large">
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+<script>
+
+</script>
+
+{% endblock %}

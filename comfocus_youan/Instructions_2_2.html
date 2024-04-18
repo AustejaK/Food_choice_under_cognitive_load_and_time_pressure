@@ -1,0 +1,58 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            {{ if player.treatment  == "C1" or player.treatment == "T2" }}
+            <p align="justify">
+            Prima di fare una scelta, ti presentiamo i dati nutrizionali dei prodotti alimentari o delle bevande.
+            Ti preghiamo di leggere queste informazioni.
+            <br><br>
+            Poi ti chiederemo di fare una scelta.
+            </p>
+            {{ endif }}
+            {{ if player.treatment  == "C2" or player.treatment == "T4"}}
+            <p align="justify">
+            Prima di scegliere, ti mostreremo le immagini del tuo potenziale aumento e perdita di peso.
+            <br><br>
+            Poi ti chiederemo di fare una scelta.
+            </p>
+            {{ endif }}
+
+           {{ if player.treatment == "T1" or player.treatment == "T3" }}
+            <p align="justify">
+            Prima di fare una scelta, ti chiederemo di fare un <b>compito di memorizzazione</b>.
+            <br><br>
+            All'inizio dell'attività, ti verrà data una <b>serie di numeri</b> da memorizzare.
+            Avrai <b>{{C.memorization}} secondi</b> per memorizarlo.
+            <br><br>
+            {{ if player.treatment == "T1"}}
+            Successivamente, ti presenteremo <b>due prodotti</b> e i loro valori nutrizionali. Si prega di leggere
+            l’informazione.
+            {{ else }}
+            Prima di scegliere, ti mostreremo le <b>immagini</b> del tuo futuro aumento di peso e della tua perdita di peso.
+            {{ endif }}
+            <br><br>
+            Dovrai <b>scegliere quale preferisci</b>.
+            <br><br>
+            Poi, ti verrà chiesto di <b>ricordare la serie di numeri</b> che hai memorizzato all’inizio.
+            <br><br>
+            Ti verrà chiesto di ripetere questa sequenca per <b>{{C.NUM_ROUNDS}} volte</b>.
+            {{ endif }}
+            <p></p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

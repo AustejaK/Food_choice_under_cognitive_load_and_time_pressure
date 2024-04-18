@@ -1,0 +1,98 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+    td {
+      padding-left: 40px;
+}
+
+    input[type='radio'] {
+        transform: scale(1.5);
+    }
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Giro di prova</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p>Ti prega di dare un'occhiata alle immagini e di leggere le informazioni.</p>
+
+            <p align="center"><b>Quale prodotto preferisci?</b></p>
+            <p>
+
+            <table  align="center" style="width:70%; text-align: center">
+                <tr>
+                    <td> <img align="center" src= "{{static 'comfocus/ex_1.png' }}" class="img-fluid"/> </td>
+                    <td> <img align="center" src= "{{static 'comfocus/ex_2.png' }}" class="img-fluid"/> </td>
+                </tr>
+
+                {{ if player.treatment == "C1" or player.treatment == "T1" or player.treatment == "T2" }}
+
+                <tr>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <td><b>Colore</b></td>
+                                <td>Verde</td>
+                            </tr>
+                            <tr>
+                                <td><b>Disegno</b></td>
+                                <td>"Stress free zone"</td>
+                            </tr>
+                            <tr>
+                                <td><b>Volume</b></td>
+                                <td>330 ml</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <td><b>Colore</b></td>
+                                <td>Nero</td>
+                            </tr>
+                            <tr>
+                                <td><b>Disegno</b></td>
+                                <td>"There is no planet B"</td>
+                            </tr>
+                            <tr>
+                                <td><b>Volume</b></td>
+                                <td>330 ml</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {{ endif }}
+
+                <tr>
+                    {{ for choice in form.choice_trial}}
+                        <td>{{choice}}</td>
+                    {{endfor}}
+                </tr>
+
+
+            </table>
+            </p>
+        </div>
+
+        <div class="card-footer text-right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+<script>
+
+</script>
+
+{% endblock %}

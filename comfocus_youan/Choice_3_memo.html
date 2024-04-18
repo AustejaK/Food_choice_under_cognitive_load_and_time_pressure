@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Il compito di memorizzazione {{player.round_number}}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="center">
+            Memorizzare i numeri: {{ number }}
+            </p>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+        document.addEventListener('copy', function(event) {
+            event.preventDefault();
+            alert('Copying is disabled on this page.');
+        });
+</script>
+
+{% endblock %}

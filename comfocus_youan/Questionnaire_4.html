@@ -1,0 +1,110 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<style>
+    td {
+      padding-left: 40px;
+      text-align: center;
+}
+
+</style>
+
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 3: Questionario</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            {{formfield 'health'}}
+            {{formfield 'medicines'}}
+            {{formfield 'medicines_2'}}
+            {{ if player.treatment == 'T2' }}
+            <p>Si prega di indicare tutti i prodotti che si <b>conoscevano</b> già prima di questo studio:</p>
+            <table class="table">
+            <tr>
+                <td>{{ pr1 }}</td>
+                <td>{{formfield 'prod1'}}</td>
+                <td>{{ pr2 }}</td>
+                <td>{{formfield 'prod2'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr3 }}</td>
+                <td>{{formfield 'prod3'}}</td>
+                <td>{{ pr4 }}</td>
+                <td>{{formfield 'prod4'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr5 }}</td>
+                <td>{{formfield 'prod5'}}</td>
+                <td>{{ pr6 }}</td>
+                <td>{{formfield 'prod6'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr7 }}</td>
+                <td>{{formfield 'prod7'}}</td>
+                <td>{{ pr8 }}</td>
+                <td>{{formfield 'prod8'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr9 }}</td>
+                <td>{{formfield 'prod9'}}</td>
+                <td>{{ pr10 }}</td>
+                <td>{{formfield 'prod10'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr11 }}</td>
+                <td>{{formfield 'prod11'}}</td>
+                <td>{{ pr12 }}</td>
+                <td>{{formfield 'prod12'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr13 }}</td>
+                <td>{{formfield 'prod13'}}</td>
+                <td>{{ pr14 }}</td>
+                <td>{{formfield 'prod14'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr15 }}</td>
+                <td>{{formfield 'prod15'}}</td>
+                <td>{{ pr16 }}</td>
+                <td>{{formfield 'prod16'}}</td>
+
+            </tr>
+            <tr>
+                <td>{{ pr17 }}</td>
+                <td>{{formfield 'prod17'}}</td>
+                <td>{{ pr18 }}</td>
+                <td>{{formfield 'prod18'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr19 }}</td>
+                <td>{{formfield 'prod19'}}</td>
+                <td>{{ pr20 }}</td>
+                <td>{{formfield 'prod20'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr21 }}</td>
+                <td>{{formfield 'prod21'}}</td>
+                <td>{{ pr22 }}</td>
+                <td>{{formfield 'prod22'}}</td>
+            </tr>
+            <tr>
+                <td>{{ pr23 }}</td>
+                <td>{{formfield 'prod23'}}</td>
+                <td>{{ pr24 }}</td>
+                <td>{{formfield 'prod24'}}</td>
+            </tr>
+        </table>
+            {{ endif }}
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 1: Istruzioni</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <p align="justify">
+            Dopo il questionario viene mostrato quale delle {{C.NUM_ROUNDS}} scelte è stata scelta a caso per
+            essere <b>vincolante</b>.
+            <br><br>
+            Per trasparenza, ti verrà mostrato un video di processo di estrazione casuale della scelta vincolante.
+        </p>
+        </div>
+        <div class="card-footer text-right">
+<!--                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >-->
+<!--                  <span style="font-size:12pt">Avanti</span>-->
+<!--             </button>-->
+        </div>
+    </div>
+</body>
+
+{% endblock %}

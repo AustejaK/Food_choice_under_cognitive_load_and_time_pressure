@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load static otree %}
+
+{% block content %}
+<body class="bg-light">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            <h5 class="card-title">Fase 4: Fine</h5>
+        </div>
+        <div class="card-body" align="center">
+            <p class="card-text">
+            <p align="center">
+            Grazie per la tua partecipazione!
+            <br><br>
+            Ora vedrai quale situazione di scelta è stata estratta a caso.
+            <br><br>
+            Clicci su "Play" nel video.
+            </p>
+            <video width="640" height="360" controls>
+              <source src="{{static 'comfocus/random_draw.mp4' }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="card-footer text-right" align="right">
+                 <button name="btn_submit" value="True" class="btn btn-primary btn-large" >
+                  <span style="font-size:12pt">Avanti</span>
+             </button>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
